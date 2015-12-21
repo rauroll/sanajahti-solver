@@ -12,8 +12,8 @@ case class Game(input: String) {
 		
 		for (i <- grid.indices) {
 			for (j <- grid(0).indices) {
-				if (grid(i)(j) == word.head) {
-					if (search((i, j), word.tail)) return Some((i, j));
+				if (grid(i)(j) == word.head && search((i, j), word.tail)) {
+					return Some((i, j));
 				}
 			}
 		}
